@@ -34,23 +34,44 @@ export default function Hero() {
   ];
 
   useLayoutEffect(() => {
-    gsap.fromTo(
-      ".hero-name-shine",
-      {
-        clipPath: "inset(0 100% 0 0)",
-        WebkitTextStroke: "1px rgba(255,255,255,0)",
-      },
-      {
-        clipPath: "inset(0 0% 0 0)",
-        WebkitTextStroke: "1px rgba(255,255,255,0.7)",
-        duration: 2.2,
-        ease: "power2.inOut",
-        repeat: -1,
-        yoyo: true,
-        repeatDelay: 0.5,
-      },
-    );
     const ctx = gsap.context(() => {
+      gsap.set(".hero-name-shine", {
+        color: "transparent",
+        WebkitTextFillColor: "transparent",
+        WebkitBackgroundClip: "text",
+        backgroundClip: "text",
+
+        backgroundImage: `
+    linear-gradient(
+      115deg,
+      transparent 0%,
+      transparent 44%,
+      rgba(255,255,255,0.08) 47%,
+      rgba(255,255,255,0.55) 50%,
+      rgba(255,255,255,0.08) 53%,
+      transparent 56%,
+      transparent 100%
+    )
+  `,
+
+        backgroundSize: "250% 100%",
+        backgroundPosition: "180% 50%",
+        filter: "drop-shadow(0 0 8px rgba(255,255,255,0.12))",
+      });
+
+      gsap
+        .timeline({
+          repeat: -1,
+          repeatDelay: 2,
+        })
+        .to(".hero-name-shine", {
+          backgroundPosition: "-180% 50%",
+          duration: 5,
+          ease: "power1.inOut",
+        })
+        .set(".hero-name-shine", {
+          backgroundPosition: "180% 50%",
+        });
       const tl = gsap.timeline({
         defaults: {
           ease: "power4.out",
@@ -271,30 +292,18 @@ export default function Hero() {
     lg:text-[11vw]
   "
         >
-          <span
-            className="
-      hero-name-effect
-      relative
-      inline-block
-      text-neutral-900
-      tracking-wider
-    "
-          >
+          <span className="hero-name-effect relative inline-block text-neutral-900 tracking-wider">
             {t("hero.name")}
 
             <span
               aria-hidden="true"
               className="
-    hero-name-shine
-    absolute
-    inset-0
-    bg-linear-to-r
-    from-transparent
-    via-neutral-400
-    to-transparent
-    bg-clip-text
-    text-transparent
-  "
+        hero-name-shine
+        absolute
+        inset-0
+        bg-clip-text
+        text-transparent
+      "
             >
               {t("hero.name")}
             </span>
