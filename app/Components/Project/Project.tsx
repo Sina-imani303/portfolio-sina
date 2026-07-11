@@ -31,8 +31,8 @@ const projects = [
     githubUrl: "#",
   },
   {
-    title: "CRM Dashboard",
-    descriptionKey: "projects.items.crm.description",
+    title: "Saas Dashboard",
+    descriptionKey: "projects.items.Sass.description",
     image: "/projects/Crm.png",
     technologies: [
       "React",
@@ -41,7 +41,7 @@ const projects = [
       "Recharts",
       "Tailwind CSS",
     ],
-    liveUrl: "https://react-crm-livid.vercel.app/",
+    liveUrl: "https://react-saas-livid.vercel.app/",
     githubUrl: "#",
   },
   {
