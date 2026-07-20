@@ -60,6 +60,21 @@ const projects = [
     liveUrl: "https://ata-shop.vercel.app/",
     githubUrl: "#",
   },
+  {
+    title: "jewerly FURROV shop",
+    descriptionKey: "projects.items.jewerly.description",
+    image: "/projects/jewerly.png",
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "tailwind",
+      "gsap",
+      "threejs",
+    ],
+    liveUrl: "https://jewelry-store-sepia-nu.vercel.app/",
+    githubUrl: "#",
+  },
 ];
 
 export default function Projects() {
