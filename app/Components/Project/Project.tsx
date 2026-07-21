@@ -63,7 +63,7 @@ const projects = [
   {
     title: "jewerly FURROV shop",
     descriptionKey: "projects.items.jewerly.description",
-    image: "/projects/jewerly.png",
+    image: "/projects/jemerly.png",
     technologies: [
       "Next.js",
       "TypeScript",
