@@ -1,6 +1,6 @@
 "use client";
 
-import { useLayoutEffect, useRef } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import ProjectCard from "../ProjectCard/ProjectCard";
 import gsap from "gsap";
@@ -64,14 +64,15 @@ const projects = [
     title: "jewerly FURROV shop",
     descriptionKey: "projects.items.jewerly.description",
     image: "/projects/jemerly.png",
-    technologies: [
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "tailwind",
-      "gsap",
-      "threejs",
-    ],
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "gsap", "threejs"],
+    liveUrl: "https://jewelry-store-sepia-nu.vercel.app/",
+    githubUrl: "#",
+  },
+  {
+    title: "Digital Menu",
+    descriptionKey: "projects.items.Digital Menu.description",
+    image: "/projects/digital menu.png",
+    technologies: ["react", "Tailwind CSS", "gsap"],
     liveUrl: "https://jewelry-store-sepia-nu.vercel.app/",
     githubUrl: "#",
   },
@@ -79,7 +80,7 @@ const projects = [
 
 export default function Projects() {
   const { t } = useTranslation();
-
+  const [visibleProject, setVisibleProject] = useState(4);
   const sectionRef = useRef<HTMLElement>(null);
   const lineRef = useRef<HTMLSpanElement>(null);
 
@@ -396,7 +397,7 @@ export default function Projects() {
           lg:gap-y-32
         "
         >
-          {projects.map((project, index) => (
+          {projects.slice(0, visibleProject).map((project, index) => (
             <div
               key={project.title}
               className={`
@@ -455,6 +456,28 @@ export default function Projects() {
             </div>
           ))}
         </div>
+        {visibleProject < projects.length && (
+          <div className="mt-16 flex justify-center">
+            <button
+              onClick={() => setVisibleProject(projects.length)}
+              className="
+        rounded-full
+        border
+        border-neutral-300
+        px-8
+        py-3
+        text-sm
+        font-medium
+        transition-all
+        duration-300
+        hover:bg-black
+        hover:text-white
+      "
+            >
+              مشاهده بیشتر
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );
