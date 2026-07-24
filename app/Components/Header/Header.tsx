@@ -1,11 +1,6 @@
 "use client";
 
-import {
-  useLayoutEffect,
-  useRef,
-  useState,
-  type MouseEvent as ReactMouseEvent,
-} from "react";
+import { useLayoutEffect, useRef, useState, type MouseEvent as ReactMouseEvent } from "react";
 import { useTranslation } from "react-i18next";
 import { FiArrowUpRight } from "react-icons/fi";
 import gsap from "gsap";
@@ -358,29 +353,8 @@ export default function Header() {
 
   return (
     <>
-      <header
-        ref={headerRef}
-        className="
-          relative
-          z-100
-          px-3
-          py-4
-          sm:px-6
-          sm:py-5
-          lg:px-10
-          font-peyda
-        "
-      >
-        <div
-          className="
-            header-shell
-            mx-auto
-            flex
-            max-w-375
-            items-center
-            justify-between
-          "
-        >
+      <header ref={headerRef} className=" relative  z-100 px-3 py-4 sm:px-6  sm:py-5  lg:px-10  font-peyda ">
+        <div className=" header-shell mx-auto flex max-w-375 items-center justify-between">
           <div className="side-action flex min-w-0 items-center gap-2 sm:gap-3">
             <span className="relative flex h-2.5 w-2.5 shrink-0 sm:h-3 sm:w-3">
               <span className="absolute inset-0 animate-ping rounded-full bg-emerald-400 opacity-50" />
@@ -388,61 +362,26 @@ export default function Header() {
               <span className="relative h-full w-full rounded-full bg-emerald-500 shadow-[0_0_18px_rgba(16,185,129,0.8)]" />
             </span>
 
-            <span className="max-w-30 truncate text-[11px] font-medium text-neutral-600 sm:max-w-none sm:text-sm tracking-widest">
-              {t("header.available")}
-            </span>
+            <span className="max-w-30 truncate text-[11px] font-medium text-neutral-600 sm:max-w-none sm:text-sm tracking-widest">{t("header.available")}</span>
           </div>
 
           <nav
             ref={navRef}
             onMouseMove={handleNavMouseMove}
             onMouseLeave={handleNavExit}
-            className="
-              relative
-              hidden
-              items-center
-              overflow-hidden
-              rounded-[28px]
-              border
-              border-white/80
-              bg-white/55
-              p-1.5
-              shadow-[0_20px_60px_-20px_rgba(0,0,0,0.25),inset_0_1px_0_rgba(255,255,255,1)]
-              backdrop-blur-2xl
-              md:flex
-            "
+            className=" relative hidden items-center overflow-hidden rounded-[28px] border border-white/80 bg-white/55
+            p-1.5  shadow-[0_20px_60px_-20px_rgba(0,0,0,0.25),inset_0_1px_0_rgba(255,255,255,1)] backdrop-blur-2xl md:flex "
           >
             <span
               ref={glowRef}
-              className="
-                pointer-events-none
-                absolute
-                left-0
-                top-0
-                h-50
-                w-50
-                rounded-full
-                bg-linear-to-br
-                from-white/80
-                via-white/30
-                to-transparent
-                blur-3xl
-              "
+              className=" pointer-events-none absolute left-0 top-0  h-50 w-50 rounded-full  bg-linear-to-br  from-white/80
+                via-white/30  to-transparent  blur-3xl"
             />
 
             <span
               ref={bubbleRef}
-              className="
-                pointer-events-none
-                absolute
-                left-0
-                top-1.5
-                h-[calc(100%-12px)]
-                rounded-[22px]
-                bg-neutral-950
-                opacity-0
-                shadow-[0_12px_30px_-10px_rgba(0,0,0,0.65),inset_0_1px_0_rgba(255,255,255,0.2)]
-              "
+              className=" pointer-events-none absolute left-0 top-1.5 h-[calc(100%-12px)] rounded-[22px]
+                bg-neutral-950  opacity-0  shadow-[0_12px_30px_-10px_rgba(0,0,0,0.65),inset_0_1px_0_rgba(255,255,255,0.2)] "
             >
               <span className="absolute inset-x-3 top-0 h-px bg-linear-to-r from-transparent via-white/60 to-transparent" />
             </span>
@@ -453,33 +392,15 @@ export default function Header() {
                 href={item.href}
                 onMouseEnter={handleNavEnter}
                 onMouseLeave={handleNavLeave}
-                className="
-                  nav-button
-                  group
-                  relative
-                  z-10
-                  flex
-                  h-12
-                  min-w-30
-                  items-center
-                  justify-center
-                  overflow-hidden
-                  rounded-[22px]
-                  px-9
-                "
+                className=" nav-button group relative z-10 flex  h-12  min-w-30  items-center  justify-center  overflow-hidden
+          rounded-[22px]   px-9 "
               >
-                <span className="nav-number absolute right-3 top-2 text-[8px] font-semibold text-white/50 opacity-0">
-                  {item.number}
-                </span>
+                <span className="nav-number absolute right-3 top-2 text-[8px] font-semibold text-white/50 opacity-0">{item.number}</span>
 
                 <span className="relative h-5.5 overflow-hidden">
-                  <span className="nav-main-text flex h-5.5 items-center justify-center text-sm font-medium text-neutral-600 transition-colors duration-300 group-hover:text-white">
-                    {item.label}
-                  </span>
+                  <span className="nav-main-text flex h-5.5 items-center justify-center text-sm font-medium text-neutral-600 transition-colors duration-300 group-hover:text-white">{item.label}</span>
 
-                  <span className="nav-hover-text flex h-5.5 items-center justify-center text-sm font-semibold text-white">
-                    {item.label}
-                  </span>
+                  <span className="nav-hover-text flex h-5.5 items-center justify-center text-sm font-semibold text-white">{item.label}</span>
                 </span>
               </a>
             ))}
@@ -490,29 +411,11 @@ export default function Header() {
               onClick={changeLanguage}
               onMouseMove={handleMagneticMove}
               onMouseLeave={handleMagneticLeave}
-              className="
-                side-action
-                flex
-                h-10
-                w-10
-                items-center
-                justify-center
-                rounded-full
-                border
-                border-white/80
-                bg-white/60
-                text-[11px]
-                font-bold
-                shadow-[0_10px_30px_-12px_rgba(0,0,0,0.3),inset_0_1px_0_white]
-                backdrop-blur-2xl
-                sm:h-12
-                sm:w-12
-                sm:text-xs
-              "
+              className=" side-action flex h-10 w-10 items-center justify-center rounded-full  border  border-white/80
+                bg-white/60  text-[11px]  font-bold  shadow-[0_10px_30px_-12px_rgba(0,0,0,0.3),inset_0_1px_0_white]
+                backdrop-blur-2xl sm:h-12 sm:w-12 sm:text-xs "
             >
-              <span className="magnetic-inner language-label">
-                {i18n.resolvedLanguage?.startsWith("fa") ? "EN" : "FA"}
-              </span>
+              <span className="magnetic-inner language-label">{i18n.resolvedLanguage?.startsWith("fa") ? "EN" : "FA"}</span>
             </button>
 
             <a
@@ -520,24 +423,8 @@ export default function Header() {
               href="#contact"
               onMouseMove={handleMagneticMove}
               onMouseLeave={handleMagneticLeave}
-              className="
-                side-action
-                group
-                relative
-                hidden
-                h-12
-                items-center
-                overflow-hidden
-                rounded-full
-                bg-neutral-950
-                px-6
-                text-sm
-                font-medium
-                text-white
-                shadow-[0_15px_35px_-12px_rgba(0,0,0,0.6)]
-                md:flex
-                tracking-widest
-              "
+              className="side-action  group  relative  hidden  h-12  items-center  overflow-hidden  rounded-full  bg-neutral-950
+                px-6 text-sm font-medium text-white shadow-[0_15px_35px_-12px_rgba(0,0,0,0.6)] md:flex tracking-widest"
             >
               <span className="absolute inset-0 scale-0 rounded-full bg-white transition-transform duration-500 ease-out group-hover:scale-150" />
 
@@ -551,45 +438,17 @@ export default function Header() {
               type="button"
               aria-label="Toggle mobile menu"
               onClick={() => setMenuOpen((prev) => !prev)}
-              className="
-                side-action
-                relative
-                z-120
-                flex
-                h-10
-                w-10
-                items-center
-                justify-center
-                overflow-hidden
-                rounded-full
-                bg-neutral-950
-                shadow-[0_12px_30px_-10px_rgba(0,0,0,0.6)]
-                sm:h-12
-                sm:w-12
-                md:hidden
-              "
+              className="side-action relative  z-120  flex  h-10  w-10  items-center  justify-center  overflow-hidden  rounded-full  bg-neutral-950 shadow-[0_12px_30px_-10px_rgba(0,0,0,0.6)] sm:h-12 sm:w-12 md:hidden "
             >
               <span className="relative block h-4 w-5">
                 <span
-                  className={`
-                    absolute
-                    left-0
-                    h-px
-                    bg-white
-                    transition-all
-                    duration-500
+                  className={`absoluteleft-0 h-px bg-white transition-all  duration-500
                     ${menuOpen ? "top-1.75 w-5 rotate-45" : "top-1 w-5"}
                   `}
                 />
 
                 <span
-                  className={`
-                    absolute
-                    right-0
-                    h-px
-                    bg-white
-                    transition-all
-                    duration-500
+                  className={`absolute right-0  h-px bg-white  transition-all  duration-500
                     ${menuOpen ? "top-1.75 w-5 -rotate-45" : "top-2.75 w-3.5"}
                   `}
                 />
@@ -601,19 +460,7 @@ export default function Header() {
 
       <div
         ref={mobileMenuRef}
-        className="
-          fixed
-          inset-0
-          z-90
-          hidden
-          flex-col
-          overflow-hidden
-          bg-neutral-950
-          px-5
-          pb-6
-          pt-24
-          text-white
-          md:hidden
+        className="  fixed inset-0  z-90  hidden  flex-col  overflow-hidden  bg-neutral-950  px-5  pb-6  pt-24  text-white md:hidden
         "
       >
         <span className="pointer-events-none absolute -right-32 top-12 h-80 w-80 rounded-full bg-white/6 blur-[90px]" />
@@ -642,9 +489,7 @@ export default function Header() {
             <span className="relative h-full w-full rounded-full bg-emerald-500" />
           </span>
 
-          <span className="text-xs font-medium text-white/60">
-            {t("header.available")}
-          </span>
+          <span className="text-xs font-medium text-white/60">{t("header.available")}</span>
         </div>
 
         <nav className="relative flex flex-1 flex-col justify-center">
