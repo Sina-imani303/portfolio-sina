@@ -60,7 +60,7 @@ const projects = [
     descriptionKey: "projects.items.Digital Menu.description",
     image: "/projects/digital menu.png",
     technologies: ["react", "Tailwind CSS", "gsap"],
-    liveUrl: "https://jewelry-store-sepia-nu.vercel.app/",
+    liveUrl: "https://digital-menu-ivory-seven.vercel.app/",
     githubUrl: "#",
   },
   {
