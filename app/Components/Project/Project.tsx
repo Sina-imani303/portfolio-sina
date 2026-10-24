@@ -469,7 +469,7 @@ export default function Projects() {
         hover:text-white
       "
             >
-              مشاهده بیشتر
+              {t("projects.viewMore")}{" "}
             </button>
           </div>
         )}
